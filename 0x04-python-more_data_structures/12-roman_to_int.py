@@ -5,6 +5,8 @@ def roman_to_int(roman_string):
     spec = {"IV": 4, "IX": 9, "XL": 40, "XC": 90, "CD": 400, "CM": 900}
     res = 0
     i = 0
+    if type(roman_string) != str or roman_string is None:
+        return 0
     while i < len(roman_string):
         if roman_string[i: i + 2] in spec:
             res += spec[roman_string[i:i + 2]]
