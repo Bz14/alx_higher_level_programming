@@ -1,10 +1,5 @@
 #!/usr/bin/python3
 def only_diff_elements(set_1, set_2):
-    result = []
-    for val in set_1:
-        if val not in set_2:
-            result.append(val)
-    for val in set_2:
-        if val not in set_1:
-            result.append(val)
-    return result
+    res_1 = filter(lambda x: x not in set_1, set_2)
+    res_2 = filter(lambda x: x not in set_2, set_1)
+    return list(res_1) + list(res_2)
