@@ -7,13 +7,13 @@ if __name__ == "__main__":
         sys.exit(1)
     res = 0
     if sys.argv[2] == "+":
-        res = int(sys.argv[1]) + int(sys.argv[3])
+        res = add(int(sys.argv[1]), int(sys.argv[3]))
     elif sys.argv[2] == "-":
-        res = int(sys.argv[1]) - int(sys.argv[3])
+        res = sub(int(sys.argv[1]), int(sys.argv[3]))
     elif sys.argv[2] == "*":
-        res = int(sys.argv[1]) * int(sys.argv[3])
+        res = mul(int(sys.argv[1]), int(sys.argv[3]))
     elif sys.argv[2] == "/":
-        res = int(sys.argv[1]) / int(sys.argv[3])
+        res = div(int(sys.argv[1]), int(sys.argv[3]))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
