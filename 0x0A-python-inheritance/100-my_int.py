@@ -5,10 +5,10 @@
 class MyInt(int):
     """ MyInt class extending int"""
 
-    def __eq__(self, val):
+    def __eq__(self, value):
         """Equality"""
-        return self.real != val
+        return self.real != value
 
-    def __nq__(self, val):
+    def __ne__(self, value):
         """Inequality"""
-        return self.value == val
+        return self.real == value
