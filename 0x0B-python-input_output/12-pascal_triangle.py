@@ -7,7 +7,7 @@ def pascal_triangle(n):
     if n <= 0:
         return []
     ans = [[1]]
-    for i in range(n):
+    while len(ans) != n:
         row = [1]
         last_row = ans[-1]
         for j in range(len(last_row) - 1):
