@@ -1,5 +1,7 @@
 #!/usr/bin/python3
+""" Add all arguments to a python list """
 import sys
+
 
 if __name__ == "__main__":
     save_to_json_file = \
@@ -11,6 +13,5 @@ if __name__ == "__main__":
         content = load_from_json_file('add_item.json')
     except FileNotFoundError:
         content = []
-    for i in range(1, len(sys.argv)):
-        content.append(sys.argv[i])
+    content.extend(sys.argv[1:])
     save_to_json_file(content, 'add_item.json')
