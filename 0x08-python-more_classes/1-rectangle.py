@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-""" A Rectangle Module """
+"""Defines a Rectangle class."""
+
 
 
 class Rectangle:
     """ A rectangle class """
 
-    def __init__(self, width = 0, height = 0):
+    def __init__(self, width=0, height=0):
         """ An init method 
         
         Args:
