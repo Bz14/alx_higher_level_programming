@@ -2,7 +2,6 @@
 """ A Rectangle Module """
 
 
-
 class Rectangle:
     """ A rectangle class """
 
