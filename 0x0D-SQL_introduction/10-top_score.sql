@@ -1,4 +1,4 @@
 -- List all records
 SELECT score,name
 FROM second_table
-ORDER BY score ASC
+ORDER BY score DESC
