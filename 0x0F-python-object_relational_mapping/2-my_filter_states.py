@@ -15,12 +15,12 @@ def list_states(username, password, database, search):
                            database=database,
                            port=3306)
     cursor = conn.cursor()
-    query = ("SELECT * FROM states WHERE name = '{}'"
+    query = ("SELECT * FROM states WHERE BINARY name = '{}'"
              " ORDER BY states.id ASC".format(search))
     cursor.execute(query)
     res = cursor.fetchall()
     for val in res:
-        print(f"({val[0]}, '{val[1]}')")
+        print(val)
     cursor.close()
     conn.close()
 
