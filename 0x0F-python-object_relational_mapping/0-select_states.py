@@ -15,3 +15,5 @@ if __name__ == "__main__":
     res = cursor.fetchall()
     for val in res:
         print(f"({val[0]}, '{val[1]}')")
+    cursor.close()
+    conn.close()
