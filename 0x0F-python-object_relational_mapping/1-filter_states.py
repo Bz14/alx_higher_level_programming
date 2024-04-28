@@ -15,12 +15,12 @@ def list_states(username, password, database):
                            database=database,
                            port=3306)
     cursor = conn.cursor()
-    query = "SELECT * FROM states WHERE name LIKE "
-    query += "'N%' ORDER BY states.id ASC"
+    query = "SELECT * FROM states ORDER BY states.id ASC"
     cursor.execute(query)
     res = cursor.fetchall()
     for val in res:
-        print(f"({val[0]}, '{val[1]}')")
+        if val[1][0] == "N":
+            print(f"({val[0]}, '{val[1]}')")
     cursor.close()
     conn.close()
 
