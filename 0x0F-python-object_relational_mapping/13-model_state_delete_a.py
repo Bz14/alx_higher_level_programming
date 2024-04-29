@@ -15,8 +15,9 @@ if __name__ == "__main__":
     engine = create_engine(url)
     Session = sessionmaker(engine)
     session = Session()
-    obj = session.query(State).all()
+    obj = (session.query(State)
+           .filter(State.name.ilike('%a%'))
+           .all())
     for row in obj:
-        if 'a' in row.name:
-            session.delete(row)
+        session.delete(row)
     session.commit()
