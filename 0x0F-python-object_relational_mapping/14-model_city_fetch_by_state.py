@@ -18,6 +18,6 @@ if __name__ == "__main__":
     session = Session()
     result = session.query(City).order_by(City.id).all()
     for row in result:
-        state_name = session.query(State).filter(row.id == State.id).first()
+        state_name = session.query(State).filter(row.state_id == State.id).first()
         if state_name:
             print(f"{state_name.name}: ({row.id}) {row.name}")
