@@ -15,10 +15,9 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    rows = session.query(State).first()
+    row = session.query(State).order_by(State.id).first()
     if not row:
         print("Nothing")
     else:
-        for row in rows:
-            print("{}: {}".format(row.id, row.name))
+        print("{}: {}".format(row.id, row.name))
     session.close()
