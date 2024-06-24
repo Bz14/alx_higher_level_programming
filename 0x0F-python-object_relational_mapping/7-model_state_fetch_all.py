@@ -10,7 +10,7 @@ if __name__ == "__main__":
     u = sys.argv[1]
     p = sys.argv[2]
     d = sys.argv[3]
-    name = f'mysql+mysqldb://{u}:{p}@localhost:3306/{d}'
+    name = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(u, p, d)
     engine = create_engine(name)
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
