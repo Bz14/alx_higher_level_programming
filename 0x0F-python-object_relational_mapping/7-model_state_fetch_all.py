@@ -11,7 +11,8 @@ if __name__ == "__main__":
     p = sys.argv[2]
     d = sys.argv[3]
     name = f'mysql+mysqldb://{u}:{p}@localhost:3306/{d}'
-    engine = create_engine(name, pool_pre_ping=True)
+    engine = create_engine(name)
+    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
     rows = session.query(State).order_by(State.id).all()
