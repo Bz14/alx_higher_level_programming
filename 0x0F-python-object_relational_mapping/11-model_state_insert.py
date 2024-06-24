@@ -10,7 +10,6 @@ if __name__ == "__main__":
     u = sys.argv[1]
     p = sys.argv[2]
     d = sys.argv[3]
-    n = sys.argv[4]
     name = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(u, p, d)
     engine = create_engine(name)
     Base.metadata.create_all(engine)
