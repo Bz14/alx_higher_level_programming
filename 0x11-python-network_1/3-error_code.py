@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """ Fetching a url  """
+import sys
 import urllib.request
 import urllib.error
-import sys
 
 
 if __name__ == "__main__":
@@ -10,6 +10,6 @@ if __name__ == "__main__":
     try:
         with urllib.request.urlopen(url) as response:
             result = response.read()
-            print(result)
+            print(result.decode('utf-8'))
     except urllib.error.HTTPError as e:
         print("Error code: {}".format(e.code))
