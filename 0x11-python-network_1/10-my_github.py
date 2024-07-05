@@ -5,18 +5,12 @@ import sys
 
 
 if __name__ == "__main__":
-    url = "http://0.0.0.0:5000/search_user"
-    q = ""
-    if len(sys.argv) > 1:
-        q = sys.argv[1]
-    data = {"q": q}
-    try:
-        response = requests.post(url, data=data)
-        response_data = response.json()
-        if response_json:
-            print(("[{}] {}"
-                   .format(response_json['id'], response_json['name'])))
-        else:
-            print("No result")
-    except requests.exceptions.JSONDecodeError:
-        print("Not a valid JSON")
+    username = sys.argv[1]
+    token = sys.argv[2]
+    url = "https://api.github.com/user"
+    response = requests.get(url, auth=(username, token))
+    if response.status_code == 200:
+        user_data = response.json()
+        print(user_data['id'])
+    else:
+        print(None)
